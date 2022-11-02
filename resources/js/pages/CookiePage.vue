@@ -13,9 +13,11 @@
 
                 <div class="col">
                     <ul>
-                        <li><router-link data-bs-toggle="modal" data-bs-target="#exampleModal" :to="{ name: 'cookie'}">Cookie</router-link></li>
+                        <li v-if="cookie"><router-link  data-bs-toggle="modal" data-bs-target="#exampleModal" :to="{ name: 'cookie'}">Cookie</router-link></li>
+                        <li v-else><router-link :to="{ name: 'cookie'}">Cookie</router-link></li>
                         <li>|</li>
-                        <li><router-link data-bs-toggle="modal" data-bs-target="#exampleModal" :to="{ name: 'session'}">Session</router-link></li>
+                        <li v-if="cookie"><router-link data-bs-toggle="modal" data-bs-target="#exampleModal" :to="{ name: 'session'}">Session</router-link></li>
+                        <li v-else><router-link :to="{ name: 'session'}">Session</router-link></li>
                     </ul>
                 </div>
 
@@ -59,6 +61,11 @@ export default{
     name: "CookiePage",
     components: {
         Modal,
+    },
+    data() {
+        return {
+            cookie : true
+        } 
     }
 }
 

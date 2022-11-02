@@ -1,15 +1,18 @@
 <template>
     <div class="body">
         <div class="container">
+            <Modal />
             <div class="header row">
                 <div class="col">
                     Spotify - Session
                 </div>
                 <div class="col">
                     <ul>
-                        <li><router-link :to="{ name: 'cookie'}">Cookie</router-link></li>
+                        <li v-if="cookie"><router-link  data-bs-toggle="modal" data-bs-target="#exampleModal" :to="{ name: 'cookie'}">Cookie</router-link></li>
+                        <li v-else><router-link :to="{ name: 'cookie'}">Cookie</router-link></li>
                         <li>|</li>
-                        <li><router-link :to="{ name: 'session'}">Session</router-link></li>
+                        <li v-if="cookie"><router-link data-bs-toggle="modal" data-bs-target="#exampleModal" :to="{ name: 'session'}">Session</router-link></li>
+                        <li v-else><router-link :to="{ name: 'session'}">Session</router-link></li>
                     </ul>
                  </div>
              </div>
@@ -39,8 +42,18 @@
 
 <script>
 
+import Modal from "../components/Modal.vue";
+
 export default{
-    name: "SessionPage"
+    name: "SessionPage",
+    components: {
+        Modal,
+    },
+    data() {
+        return {
+            cookie : true
+        } 
+    }
 }
 
 </script>

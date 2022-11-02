@@ -1946,6 +1946,11 @@ __webpack_require__.r(__webpack_exports__);
   name: "CookiePage",
   components: {
     Modal: _components_Modal_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      cookie: true
+    };
   }
 });
 
@@ -1960,8 +1965,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_Modal_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Modal.vue */ "./resources/js/components/Modal.vue");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "SessionPage"
+  name: "SessionPage",
+  components: {
+    Modal: _components_Modal_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      cookie: true
+    };
+  }
 });
 
 /***/ }),
@@ -2105,7 +2120,7 @@ var render = function render() {
     staticClass: "col"
   }, [_vm._v("\n                Spotify - Cookie\n            ")]), _vm._v(" "), _c("div", {
     staticClass: "col"
-  }, [_c("ul", [_c("li", [_c("router-link", {
+  }, [_c("ul", [_vm.cookie ? _c("li", [_c("router-link", {
     attrs: {
       "data-bs-toggle": "modal",
       "data-bs-target": "#exampleModal",
@@ -2113,10 +2128,22 @@ var render = function render() {
         name: "cookie"
       }
     }
-  }, [_vm._v("Cookie")])], 1), _vm._v(" "), _c("li", [_vm._v("|")]), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("Cookie")])], 1) : _c("li", [_c("router-link", {
+    attrs: {
+      to: {
+        name: "cookie"
+      }
+    }
+  }, [_vm._v("Cookie")])], 1), _vm._v(" "), _c("li", [_vm._v("|")]), _vm._v(" "), _vm.cookie ? _c("li", [_c("router-link", {
     attrs: {
       "data-bs-toggle": "modal",
       "data-bs-target": "#exampleModal",
+      to: {
+        name: "session"
+      }
+    }
+  }, [_vm._v("Session")])], 1) : _c("li", [_c("router-link", {
+    attrs: {
       to: {
         name: "session"
       }
@@ -2186,25 +2213,41 @@ var render = function render() {
     staticClass: "body"
   }, [_c("div", {
     staticClass: "container"
-  }, [_c("div", {
+  }, [_c("Modal"), _vm._v(" "), _c("div", {
     staticClass: "header row"
   }, [_c("div", {
     staticClass: "col"
   }, [_vm._v("\n                Spotify - Session\n            ")]), _vm._v(" "), _c("div", {
     staticClass: "col"
-  }, [_c("ul", [_c("li", [_c("router-link", {
+  }, [_c("ul", [_vm.cookie ? _c("li", [_c("router-link", {
+    attrs: {
+      "data-bs-toggle": "modal",
+      "data-bs-target": "#exampleModal",
+      to: {
+        name: "cookie"
+      }
+    }
+  }, [_vm._v("Cookie")])], 1) : _c("li", [_c("router-link", {
     attrs: {
       to: {
         name: "cookie"
       }
     }
-  }, [_vm._v("Cookie")])], 1), _vm._v(" "), _c("li", [_vm._v("|")]), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("Cookie")])], 1), _vm._v(" "), _c("li", [_vm._v("|")]), _vm._v(" "), _vm.cookie ? _c("li", [_c("router-link", {
+    attrs: {
+      "data-bs-toggle": "modal",
+      "data-bs-target": "#exampleModal",
+      to: {
+        name: "session"
+      }
+    }
+  }, [_vm._v("Session")])], 1) : _c("li", [_c("router-link", {
     attrs: {
       to: {
         name: "session"
       }
     }
-  }, [_vm._v("Session")])], 1)])])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)])]);
+  }, [_vm._v("Session")])], 1)])])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)], 1)]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
